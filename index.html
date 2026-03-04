@@ -169,23 +169,33 @@
       display:block;
     }
     .photo .overlay{
-      position:absolute; inset:0;
-      background: linear-gradient(180deg, transparent 42%, rgba(43,38,35,.72));
-      display:flex;
-      align-items:flex-end;
-      padding: 16px;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-    .photo .overlay span{
-      font-weight: 950;
-      letter-spacing:.2px;
-      background: rgba(255,255,255,.14);
-      border: 1px solid rgba(255,255,255,.18);
-      padding: 8px 10px;
-      border-radius: 999px;
-      color: rgba(255,255,255,.96);
-      font-size: 13px;
+  position:absolute;
+  left: 14px;
+  right: 14px;
+  bottom: 14px;
+  top: auto;          /* key: don't cover whole image */
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  align-items:flex-end;
+  justify-content:flex-start;
+  padding: 0;
+  background: none;   /* remove gradient overlay */
+}
+
+.photo .overlay span{
+  display:inline-flex;
+  width: auto;              /* key: no stretching */
+  max-width: 100%;
+  white-space: nowrap;      /* keep pills tight */
+  font-weight: 950;
+  background: rgba(43,38,35,.45);
+  border: 1px solid rgba(255,255,255,.22);
+  color: rgba(255,255,255,.96);
+  padding: 8px 10px;
+  border-radius: 999px;
+  backdrop-filter: blur(6px);
+}
     }
 
     /* Instagram embeds */
